@@ -1,0 +1,7 @@
+<div class="list-banner bg-gradient">
+  <h1><%= @list.name %></h1>
+</div>
+
+<% @movies.each do |movie| %>
+  <h2><%= movie.title %></h2>
+<% end %>

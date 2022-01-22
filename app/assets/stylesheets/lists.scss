@@ -1,0 +1,41 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-item {
+  background-color: yellowgreen;
+  text-decoration: none;
+  color: white;
+}
+.grid-item:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.banner {
+  background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-banner {
+  background-image: url('https://wallpaperaccess.com/full/1561764.jpg'), linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.5));
+  background-blend-mode: multiply;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
