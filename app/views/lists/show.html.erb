@@ -2,6 +2,14 @@
   <h1><%= @list.name %></h1>
 </div>
 
+<div class="d-flex justify-content-between p-5 align-items-center">
+  <h2>Movies (<%= @movies.count %>)</h2>
+  <%= simple_form_for @list do |f| %>
+    <%= f.association :movies, label: false, hint: "Add one movie to the List" %>
+    <%= f.button :submit, 'Add movie!', class: "btn btn-sm btn-success" %>
+  <% end %>
+</div>
+
 <% @movies.each do |movie| %>
   <h2><%= movie.title %></h2>
 <% end %>
