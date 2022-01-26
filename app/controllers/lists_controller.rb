@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
-  before_action :find_list, only: [:show, :movies, :edit, :update, :destroy]
-  before_action :movies, only: [:show, :edit, :update]
+  before_action :find_list, only: [:show, :movies, :destroy]
+  before_action :bookmarks, only: [:show]
 
   def index
     @lists = List.all
@@ -23,17 +23,8 @@ class ListsController < ApplicationController
   def show
   end
 
-  def movies
-    @movies = @list.movies
-  end
-
-  def edit
-  end
-
-  def update
-    @list.update(list_params)
-
-    redirect_to list_path(@list)
+  def bookmarks
+    @bookmarks = @list.bookmarks
   end
 
   def destroy
@@ -45,7 +36,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :movies)
+    params.require(:list).permit(:name, :bgimage)
   end
 
   def find_list

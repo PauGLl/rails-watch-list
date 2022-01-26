@@ -1,15 +1,28 @@
-<div class="list-banner bg-gradient">
+<div class="list-banner" style="background-image: url(<%= @list.bgimage %>), linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.5))">
   <h1><%= @list.name %></h1>
 </div>
 
 <div class="d-flex justify-content-between p-5 align-items-center">
-  <h2>Movies (<%= @movies.count %>)</h2>
-  <%= simple_form_for @list do |f| %>
-    <%= f.association :movies, label: false, hint: "Add one movie to the List" %>
-    <%= f.button :submit, 'Add movie!', class: "btn btn-sm btn-success" %>
+  <h2>Movies (<%= @bookmarks.count %>)</h2>
+  <div>
+    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "p-1 btn btn-outline-success" %>
+    <%= link_to 'Delete list', list_path(@list), method: :delete, data: { confirm: "Are you sure?" }, class: "p-1 btn btn-outline-danger" %>
+  </div>
+</div>
+<div class="grid-container px-5">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="card grid-item">
+      <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="movie pic">
+      <div class="card-body">
+        <h5 class="card-title"><%= bookmark.movie.title %></h5>
+        <h6 class="border-bottom"><i class="fas fa-star"> <%= bookmark.movie.rating %></i></h6>
+        <p class="card-text border-bottom"><%= bookmark.movie.overview %></p>
+        <div class="bookmark-comment">
+          <p class="card-text"><%= bookmark.comment %></p>
+        </div>
+        <%= link_to 'Delete', list_bookmark_path(bookmark), method: :delete,
+            data: { confirm: "Are you sure?" }, class: "link-danger" %>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<% @movies.each do |movie| %>
-  <h2><%= movie.title %></h2>
-<% end %>

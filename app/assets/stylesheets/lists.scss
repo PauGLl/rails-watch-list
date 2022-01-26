@@ -6,14 +6,16 @@
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.grid-item {
-  background-color: yellowgreen;
+.grid-item-index {
   text-decoration: none;
-  color: white;
+  border-radius: 13px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.7);
 }
-.grid-item:hover {
+.grid-item-index:hover {
   text-decoration: none;
   color: white;
+  box-shadow: 2px 3px 5px rgba(0,0,0,.7);
+  font-weight: bolder;
 }
 
 .banner {
@@ -28,11 +30,10 @@
   justify-content: center;
 }
 .list-banner {
-  background-image: url('https://wallpaperaccess.com/full/1561764.jpg'), linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.5));
-  background-blend-mode: multiply;
   height: 40vh;
   background-size: cover;
   background-position: center;
+  background-blend-mode: multiply;
   color: white;
   text-align: center;
   display: flex;

@@ -5,6 +5,7 @@
 <div class="p-5">
   <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
+    <%= f.input :bgimage, label: "Image", hint: "Copy/Paste image url" %>
     <%= f.button :submit, class: "btn btn-sm btn-outline-success"  %>
   <% end %>
 </div>

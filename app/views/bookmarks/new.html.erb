@@ -1,2 +1,11 @@
-<h1>Bookmarks#new</h1>
-<p>Find me in app/views/bookmarks/new.html.erb</p>
+<div class="d-flex justify-content-between p-5 align-items-center">
+  <h2>New Movie</h2>
+  <%= link_to 'Back to My List', list_path(@list), class: "btn btn-sm btn-outline-primary" %>
+</div>
+<div class="p-5">
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, hint: "Select a movie" %>
+    <%= f.input :comment %>
+    <%= f.button :submit, class: "btn btn-sm btn-outline-success"  %>
+  <% end %>
+</div>
