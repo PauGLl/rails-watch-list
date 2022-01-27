@@ -4,8 +4,6 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:new, :create, :destroy]
   end
   resources :lists do
-    member do
-      get :movies
-    end
+    resources :reviews, only: [:new, :create]
   end
 end

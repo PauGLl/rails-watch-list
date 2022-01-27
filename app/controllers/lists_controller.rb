@@ -21,6 +21,9 @@ class ListsController < ApplicationController
   end
 
   def show
+    @reviews = @list.reviews
+    @bookmark = Bookmark.new
+    @review = Review.new
   end
 
   def bookmarks

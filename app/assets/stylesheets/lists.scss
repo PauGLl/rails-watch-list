@@ -4,7 +4,7 @@
 .grid-container {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .grid-item-index {
   text-decoration: none;
@@ -39,4 +39,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.grid-item-show {
+  p {
+    font-size: xx-small;
+  }
+  .img-div {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rating {
+    color: gold;
+  }
+}
+
+.grid-container-review {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
 }
